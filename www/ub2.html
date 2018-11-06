@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<style>
+body
+{
+background:url("pool.jpg");
+}
+#a
+{
+color:#FBF6F9;
+margin-left:200px;
+}
+h3
+{
+text-align:center;
+font-size:30px;
+font-family:arial;
+
+}
+
+input[type=text], select {
+text-color:#FBF6F9;   
+ width: 50%;
+    padding: 12px 20px;
+    margin-left:200px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+margin-bottom:10px;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #E89E00;
+    color: white;
+    margin-left:200px;
+    padding: 14px 20px;
+
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 50px;
+    width:800px;
+    opacity:1;
+    background-color: #000;
+    padding: 20px;
+    margin-left:200px;
+}
+</style>
+<body onload="b()">
+
+<h3><u>Welcome : Transaction Page</u><br>user2 account</h3>
+
+<div>
+   &nbsp&nbsp&nbsp<input type="button" value="Transaction History" onclick="a()">
+&nbsp&nbsp&nbsp<a href="user2cheque.jpg"><input type="button" value="Print Cheque"></a>
+&nbsp&nbsp&nbsp<a href="index.html"><input type="button" value="Log OUT"></a><p id="a">
+   <p id="a">From:</p> 
+        <select id="savings" name="country">
+      <option value="australia">savings</option>
+      <option value="canada">chequing</option>
+    </select> 
+    <p id="a">To:</p> 
+      <select id="country" name="country">
+
+      <option value="usa">others...</option>
+    </select>
+
+    <p id="a">Current Balance:</p>
+    <input type="text" id="x" value="1000" name="lastname" placeholder="Enter amount">
+   <p id="a">Amount to transfer :</p>
+    <input type="text" id="y"  name="lastname" placeholder="Enter amount">
+   
+   <p id="a">Final Balance:</p>
+    <input type="text" id="z"  name="lastname" placeholder="Enter amount">
+  
+    <input type="submit" value="Submit" onclick="onFocusInput()">
+
+
+   
+  </form>
+</div>
+
+<script>
+
+function a(object)
+{
+var s=localStorage.getItem("key2")
+var x=document.getElementById("y").value;
+var a1=document.getElementById("y").value;
+var a3=document.getElementById("z").value;
+var d = new Date();
+if(s!="")
+var z=1000-s
+var zx= Math.abs(z);
+if(x=="")
+alert("NO Transaction yet from this A/C")
+else
+alert("Transaction: history\n"+d +" \n"+"Debited amount $  :"+a1+"\nFinal Amount $   :"+a3+"\n\nTransfered to A/C: User1")
+}
+
+
+function onFocusInput(object){
+   var a= document.getElementById("x").value;
+  var b= document.getElementById("y").value;
+  var h=b;
+ var  q=1000
+  
+var c=a-b;
+if(c>=0)
+document.getElementById("z").value=c;
+else{document.getElementById("z").value="Insufficient balance";
+alert("Insufficient balance")}
+var t=  1000+parseInt(h);
+document.getElementById("r").value=t;
+localStorage.setItem("key",t);
+}
+
+function b()
+{
+var c=localStorage.getItem("key2")
+if(c=="")
+document.getElementById("x").value="1000";
+else
+document.getElementById("x").value=localStorage.setItem("key2");
+}
+
+
+
+</script>
+
+</body>
+</html>

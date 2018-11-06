@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="login2.css">
+<title>
+login_page
+</title>
+</head>
+<body>
+<div class="loginbox">
+<img src="log.png" class="log">
+<h1>Change Password</h1>
+<form>
+<p>UserName : : user1</p>
+
+<p>Old Password</p>
+<input type="password" name="" placeholder="enter your password" id="password" >
+<p>New Password</p>
+<input type="password" name="" placeholder="enter your password" id="password1">
+<p>Confirm New Password</p>
+<input type="password" name="" placeholder="enter your password" id="password2">
+<input type="submit" name="" value="CHANGE PASSWORD" onclick="login()">
+
+
+
+<script>
+function login()
+{
+
+var a=document.getElementById('password').value
+var b=document.getElementById('password1').value
+var c=document.getElementById('password2').value
+if(a==""||b=="")
+{
+alert("!!! please fill the details !!!");
+}
+else 
+if(a=="12345"){
+if(b==c)
+{
+alert("Password changed Successfully");
+localStorage.setItem('user1',b);
+window.open("index.html");
+}else
+alert("New password and Confirmed password :: not matched");
+}else
+alert("wrong old password")
+}
+
+
+</script>
+</body>

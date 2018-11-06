@@ -1,0 +1,63 @@
+<html>
+<head>
+<link rel="stylesheet" href="login1.css">
+<title>
+login_page
+</title>
+</head>
+<body>
+<div class="loginbox">
+<img src="log.png" class="log">
+<h1>Account Login</h1>
+<form>
+<p>UserName </p>
+<input type="text" id="username" value="" name="username" placeholder="enter your username">
+<p>Password</p>
+<input type="password" name="" placeholder="enter your password" id="password">
+<input type="submit" name="" value="LOGIN" onclick="login()">
+<input type="submit" name="" value="CHANGE PASSWORD" onclick="log()">
+
+
+
+<script>
+if(sessionStorage.getItem('DataLoaded') == null){
+    sessionStorage.setItem('DataLoaded','True');
+
+    sessionStorage.setItem('user1','12345');
+    sessionStorage.setItem('user2','56789');
+
+ 
+}
+
+
+function login()
+{
+var a=document.getElementById('username').value
+var b=document.getElementById('password').value
+if(a==""||b=="")
+{
+alert("!!! please fill the details !!!");
+}
+else 
+if(a=="user1" && b=="12345")
+{
+window.open("ub1.html");
+}
+if(a=="user2" && b=="56789")
+{
+window.open("ub2.html");
+}
+}
+
+function log()
+{
+var a=document.getElementById('username').value;
+if(a=="user1")
+window.open("u1.html");
+if(a=="user2")
+window.open("u2.html");
+else
+alert("Please Enter Valid UserName")
+}
+</script>
+</body>
